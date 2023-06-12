@@ -11,7 +11,7 @@ import java.util.Properties;
 public class DBUtility {
     private static String user;
     private static String password;
-    private static final String connectURl="jdbc:mysql://sql9.freesqldatabase.com:3306/sql9623932";
+    private static final String connectURl="jdbc:mysql://sql9.freesqldatabase.com:3306/sql9625531";
 
 
 
@@ -37,7 +37,7 @@ public class DBUtility {
     public static void creatFuelPrice () {
 
         try (Formatter formatter = new Formatter("creatFuelItem.sql");) {
-             formatter.format("INSERT INTO `sql9623932`.`fuelprice`\n" +
+             formatter.format("INSERT INTO `sql9625531`.`fuelprice`\n" +
                     "(`Date`,`Ottawa`,`Torontowest`,`Torontoeast`,`Winsor`,`London`,`Sudbury`,`Thunderbay`,`Fueltype`)\n" +
                     "VALUES\n" +
                     "(?,?,?,?,?,?,?,?,?);\n");
@@ -48,7 +48,7 @@ public class DBUtility {
     }
        public static ArrayList<FuelPrice> getFuelPrices() throws SQLException {
             ArrayList<FuelPrice> fuelPrices = new ArrayList<>();
-            String sql = "SELECT * FROM sql9623932.fuelprice;";
+            String sql = "SELECT * FROM sql9625531.fuelprice;";
             try (
                     Connection connection = DriverManager.getConnection(connectURl, user, password);
                     Statement statement = connection.createStatement();
